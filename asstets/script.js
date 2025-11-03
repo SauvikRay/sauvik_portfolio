@@ -14,20 +14,20 @@ let itemCategory; // assigned after dynamic render
 // dynamic portfolio data
 const portfolioItemsData = [
   {
-    img: './asstets/images/1.jpg',
+    img: './asstets/images/1.png',
     name: 'Kambaii Fitness',
-    icon: 'volume-high',
-    category: 'SoundCloud',
+    icon: 'fitness',
+    category: 'Fitness',
     android: 'https://play.google.com/store/apps/details?id=com.kambaii.fitness',
     ios: 'https://apps.apple.com/us/app/kambaii-fitness/id6745445260'
   },
   {
-    img: './asstets/images/2.jpg',
-    name: 'Media Project 1',
-    icon: 'film',
-    category: 'Media',
-    android: '#',
-    ios: '#'
+    img: './asstets/images/2.png',
+    name: 'My Chat App',
+    icon: 'chatbubbles',
+    category: 'Live streaming',
+    android: 'https://play.google.com/store/apps/details?id=com.iris.mychat2',
+    ios: 'https://apps.apple.com/us/app/%EB%A7%88%EC%9D%B4%EC%B1%97-%EC%8B%A0%EA%B0%9C%EB%85%90-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%BB%A4%EB%A8%B8%EC%8A%A4-%EB%A7%88%EC%BC%93-no-1/id6747725675'
   },
   {
     img: './asstets/images/3.jpg',

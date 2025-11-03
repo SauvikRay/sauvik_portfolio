@@ -9,7 +9,130 @@ const pages = document.querySelectorAll('.page');
 
 // variables for filtering
 const filterBtn = document.querySelectorAll('.filter-item');
-const itemCategory = document.querySelectorAll('.item-category');
+let itemCategory; // assigned after dynamic render
+
+// dynamic portfolio data
+const portfolioItemsData = [
+  {
+    img: './asstets/images/1.jpg',
+    name: 'SoundCloud Audio',
+    icon: 'volume-high',
+    category: 'SoundCloud',
+    android: '#',
+    ios: '#'
+  },
+  {
+    img: './asstets/images/2.jpg',
+    name: 'Media Project 1',
+    icon: 'film',
+    category: 'Media',
+    android: '#',
+    ios: '#'
+  },
+  {
+    img: './asstets/images/3.jpg',
+    name: 'Vimeo Video 1',
+    icon: 'videocam',
+    category: 'Vimeo Videos',
+    android: '#',
+    ios: '#'
+  },
+  {
+    img: './asstets/images/4.jpg',
+    name: 'Media Projct 2',
+    icon: 'film',
+    category: 'Media',
+    android: '#',
+    ios: '#'
+  },
+  {
+    img: './asstets/images/5.jpg',
+    name: 'Mockup Design 1',
+    icon: 'image',
+    category: 'Mockups',
+    android: '#',
+    ios: '#'
+  },
+  {
+    img: './asstets/images/6.jpg',
+    name: 'YouTube Video 1',
+    icon: 'videocam',
+    category: 'YouTube Videos',
+    android: '#',
+    ios: '#'
+  }
+];
+
+function renderPortfolio(items) {
+  const group = document.querySelector('.portfolio-items-group');
+  if (!group) return;
+  group.innerHTML = '';
+  items.forEach(function (it) {
+    const item = document.createElement('div');
+    item.className = 'portfolio-item active';
+    if (it.android) item.setAttribute('data-android', it.android);
+    if (it.ios) item.setAttribute('data-ios', it.ios);
+
+    const img = document.createElement('img');
+    img.className = 'item-img';
+    img.src = it.img;
+    img.alt = it.name || '';
+
+    const title = document.createElement('h4');
+    title.className = 'item-name';
+    title.textContent = it.name;
+
+    const iconBox = document.createElement('div');
+    iconBox.className = 'item-icon';
+    const icon = document.createElement('ion-icon');
+    icon.setAttribute('name', it.icon);
+    iconBox.appendChild(icon);
+
+    const category = document.createElement('div');
+    category.className = 'item-category';
+    category.textContent = it.category;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'store-overlay';
+    const aAndroid = document.createElement('a');
+    aAndroid.className = 'store-link';
+    aAndroid.setAttribute('data-store', 'android');
+    aAndroid.href = it.android || '#';
+    aAndroid.target = '_blank';
+    aAndroid.rel = 'noopener noreferrer';
+    aAndroid.setAttribute('aria-label', 'Get it on Google Play');
+    const androidIcon = document.createElement('ion-icon');
+    androidIcon.setAttribute('name', 'logo-google-playstore');
+    aAndroid.appendChild(androidIcon);
+
+    const aIos = document.createElement('a');
+    aIos.className = 'store-link';
+    aIos.setAttribute('data-store', 'ios');
+    aIos.href = it.ios || '#';
+    aIos.target = '_blank';
+    aIos.rel = 'noopener noreferrer';
+    aIos.setAttribute('aria-label', 'Download on the App Store');
+    const iosIcon = document.createElement('ion-icon');
+    iosIcon.setAttribute('name', 'logo-apple');
+    aIos.appendChild(iosIcon);
+
+    overlay.appendChild(aAndroid);
+    overlay.appendChild(aIos);
+
+    item.appendChild(img);
+    item.appendChild(title);
+    item.appendChild(iconBox);
+    item.appendChild(category);
+    item.appendChild(overlay);
+
+    group.appendChild(item);
+  });
+}
+
+// initial render
+renderPortfolio(portfolioItemsData);
+// capture categories after render for filtering
+itemCategory = document.querySelectorAll('.item-category');
 
 // toggling sidebar in mobile
 menuToggler.addEventListener('click', function(){
@@ -75,3 +198,4 @@ for (let i = 0; i < filterBtn.length; i++) {
     }
   });
 }
+// (No extra mapping needed: hrefs set during render)

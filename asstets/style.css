@@ -620,6 +620,48 @@ img {
   font-size: var(--font-size-11);
 }
 
+/* portfolio store overlay */
+.portfolio .portfolio-item .store-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: var(--transition-default);
+  z-index: 5;
+}
+
+.portfolio .portfolio-item:hover .store-overlay {
+  opacity: 1;
+}
+
+.store-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-white-100);
+  color: var(--background-dark-90);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  transition: var(--transition-default);
+}
+
+.store-link:hover {
+  background: var(--background-orange);
+  color: var(--color-white-100);
+  transform: translateY(-2px);
+}
+
+.store-link ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 50px;
+}
+
 /* blog section structure style */
 .blog-container {
   display: grid;

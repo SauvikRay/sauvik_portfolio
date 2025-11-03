@@ -334,8 +334,8 @@ img {
 
 /* Highlight utility */
 .highlight {
-  background: var(--background-orange);
-  color: var(--color-white-100);
+  /* background: var(--background-orange); */
+  color: var(--background-orange);
   padding: 0 4px;
   border-radius: 2px;
 }
@@ -758,6 +758,7 @@ img {
 /* Responsive for 1024px */
 
 @media screen and (max-width: 1024px) {
+
   /* mobile navbar style */
   .nav-mobile {
     display: flex;

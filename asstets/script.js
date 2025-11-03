@@ -15,11 +15,11 @@ let itemCategory; // assigned after dynamic render
 const portfolioItemsData = [
   {
     img: './asstets/images/1.jpg',
-    name: 'SoundCloud Audio',
+    name: 'Kambaii Fitness',
     icon: 'volume-high',
     category: 'SoundCloud',
-    android: '#',
-    ios: '#'
+    android: 'https://play.google.com/store/apps/details?id=com.kambaii.fitness',
+    ios: 'https://apps.apple.com/us/app/kambaii-fitness/id6745445260'
   },
   {
     img: './asstets/images/2.jpg',
@@ -135,7 +135,7 @@ renderPortfolio(portfolioItemsData);
 itemCategory = document.querySelectorAll('.item-category');
 
 // toggling sidebar in mobile
-menuToggler.addEventListener('click', function(){
+menuToggler.addEventListener('click', function () {
   sideBar.classList.toggle('active');
 });
 
@@ -144,7 +144,7 @@ menuToggler.addEventListener('click', function(){
 
 for (let i = 0; i < navItemLinks.length; i++) {
   // added onclick event in nav links
-  navItemLinks[i].addEventListener('click', function(){
+  navItemLinks[i].addEventListener('click', function () {
 
     // collected nav links innertext
     const itemLinkText = this.textContent.toLowerCase();
@@ -172,7 +172,7 @@ for (let i = 0; i < navItemLinks.length; i++) {
 
 // added eventListener in filter buttons
 for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener('click', function(){
+  filterBtn[i].addEventListener('click', function () {
 
     // remove all active class from filter button
     for (let i = 0; i < filterBtn.length; i++) {
